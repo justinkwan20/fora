@@ -8,10 +8,10 @@ class User(models.Model):
     displayname = models.CharField(max_length = 30)
     password = models.CharField(max_length = 100)
     email = models.EmailField(max_length = 100)
-    regdate = models.DateTimeField()
+    # regdate = models.DateTimeField()
 
-    university = models.CharField(max_length = 30)
-    location = models.CharField(max_length = 30)
+    # university = models.CharField(max_length = 30)
+    # location = models.CharField(max_length = 30)
     # Need to implement profile pics
 
 class Listing(models.Model):
