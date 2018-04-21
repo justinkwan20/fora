@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listings</title>
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+</head>
+<body>
+    <h1>Title</h1>
+    <p>Welcome, {{ username }}.</p>
+
+    <h2>Listings</h2>
+
+<table>
+  <tr>
+    <th>Listing</th>
+    <th>Rating</th>
+    <th>Poster</th>
+  </tr>
+  <!-- Iterate over this -->
+  <tr>
+    <td>{{ title }}</td>
+    <td>{{ rating }}</td>
+    <td>{{ price }}</td>
+  </tr>
+</table>
+    <!--<p>Thanks for placing an order from {{ company }}. It's scheduled to ship on {{ s\
+hip_date|date:"F j, Y" }}.</p>
+    <p>Here are the items you've ordered:</p>
+    <ul>
+        {% for item in item_list %}
+        <li>{{ item }}</li>{% endfor %}
+    </ul>
+    {% if ordered_warranty %}
+    <p>Your warranty information will be included in the packaging.</p>
+    {% else %}
+    <p>
+        You didn't order a warranty, so you're on your own when the products inevitably stop working.
+    </p>
+    {% endif %}
+    <p>Sincerely,<br />{{ company }}</p>-->
+</body>
+</html>
