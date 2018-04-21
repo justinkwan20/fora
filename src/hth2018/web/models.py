@@ -12,10 +12,14 @@ class User(models.Model):
 
     university = models.CharField(max_length = 30)
     location = models.CharField(max_length = 30)
+    # Need to implement profile pics
 
 class Listing(models.Model):
     # No listing ID field necessary, Django automatically creates an ID row in database
     title = models.CharField(max_length = 30)
     desc = models.CharField(max_length = 500)
+    price = models.IntegerField()
+    # Need to implement photo preview/gallery (optional field)
+
     # This will be a list/array with the fields UserID, Rating (int), and Review (CharField)
     ratingJSON = models.CharField(max_length = 1000)
