@@ -2,7 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Campus Sell | {% block pagetitle %}{% endblock %}</title>
+    
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 <body>
@@ -13,7 +15,7 @@
 <div class="topnav">
   <a href="/" {% if request.path == '/' %}class="active"{% endif %}>Home</a>
   <a href="/listings" {% if request.path == '/listings' %}class="active"{% endif %}>Listings</a>
-  <a href="/new">New Listing</a>
+  <a href="/new" {% if request.path == '/new' %}class="active"{% endif %}>New Listing</a>
   <div style = "float: right">
   <div class="search-container">
     <form action="#search">

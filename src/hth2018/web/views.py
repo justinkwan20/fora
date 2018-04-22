@@ -32,7 +32,7 @@ def index(request):
 
 def new(request):
     # database stuff
-    template = loader.get_template(request, 'web/base_newlisting.html')
+    return render(request, 'web/base_newlisting.html')
 
 # example:
 # user.objects.get(id = user.id)
