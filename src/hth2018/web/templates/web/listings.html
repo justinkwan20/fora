@@ -1,0 +1,23 @@
+<article>
+  <table>
+    <col width="50%">
+    <col width="15%">
+    <col width="15%">
+    <col width="20%">
+    <tr>
+      <th>Listing</th>
+      <th>Price</th>
+      <th>Rating</th>
+      <th>Poster</th>
+    </tr>
+    <!-- Iterate over this -->
+    {% for entry in latest_listings %}
+    <tr>
+      <td>{{ entry.title }}</td>
+      <td>{{ entry.price }}</td>
+      <td>{{ entry.ratingJSON }}</td>
+      <td>{{ entry.user }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</article>
