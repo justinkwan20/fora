@@ -14,13 +14,19 @@
 <body>
   <nav class="light-blue lighten-1" role="navigation">
 
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Dormlist</a>
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Dormlist</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/">Home</a></li>
         <li><a href="listings">View Listings</a></li>
+
+        {% if user.is_authenticated %}
         <li><a href="new">Create Listing</a></li>
-        <li><a class="waves-effect waves-light orange darken-1 btn" href="login">Log In</a></li>
+        <li style="padding: 0 15px;">Welcome, {{ user.get_username }}!</li>
+        <li><a class="waves-effect waves-light orange darken-1 btn" href="{% url 'logout'%}?next={{request.path}}">Log Out</a></li>
+        {% else %}
+        <li><a class="waves-effect waves-light orange darken-1 btn" href="{% url 'login'%}?next={{request.path}}">Log In</a></li>
         <li><a class="waves-effect waves-light light-green btn" href="register">Register</a></li>
+        {% endif %}
       </ul>
 
       <ul id="nav-mobile" class="sidenav">

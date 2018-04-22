@@ -1,13 +1,32 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from web.models import User
+from django.contrib.auth.models import User
 from web.models import Listing
+from .forms import RegForm
+from .forms import LoginForm
+from .forms import NewListForm
+from django.shortcuts import redirect
+from django.contrib.auth.models import AbstractBaseUser, UserManager
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'web/base_home.html')
+    if request.method == 'POST':
+        firstname = request.POST.get('first_name')
+        lastname = request.POST.get('last_name')
+        email = request.POST.get('email')
+        username = "testuser" #request.POST.get('username')
+        password = request.POST.get('password')
+        # Create user and save to the database
+        user = User.objects.create_user(username = username, email = email, password = password)
+        # Update fields and then save again
+        user.first_name = firstname
+        user.last_name = lastname
+        user.save()
+        return redirect('/accounts/login')
+    elif request.method == 'GET':
+        return render(request, 'web/base_home.html')
 
 def index(request):
     # This creates temporary database entries
@@ -31,15 +50,21 @@ def index(request):
     #return HttpResponse(template.render(context, request))
 
 def new(request):
-    # database stuff
-    return render(request, 'web/base_newlisting.html')
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        price = request.POST.get('price')
+        desc = request.POST.get('desc')
+        ratingJSON = 10
+        newlisting = Listing.objects.create(title = title, price = price, desc = desc, ratingJSON = ratingJSON)
+        newlisting.save()
+        return redirect('/listings')
+    elif request.method == 'GET':
+        return render(request, 'web/base_newlisting.html')
 
 def register(request):
-    # database stuff
     return render(request, 'web/base_register.html')
 
 def login(request):
-    # database stuff
     return render(request, 'web/base_login.html')
 
 # example:

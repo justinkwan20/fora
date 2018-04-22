@@ -14,7 +14,8 @@
     <table class="striped">
    <thead>
      <tr>
-         <th width="45%">Listing</th>
+         <th width="25%">Listing</th>
+         <th width="35%">Description</th>
          <th width="20%">Posted by</th>
          <th width="10%">Price</th>
          <th width="10%">Rating</th>
@@ -25,7 +26,9 @@
      {% for entry in latest_listings %}
      <tr>
        <td>{{ entry.title }}</td>
-       <td>{{ entry.user }}</td>
+       <td>{{ entry.desc }}</td>
+       <td>wpine215</td>
+       <!--<td>{{ entry.user }}</td>-->
        <td>{{ entry.price }}</td>
        <td><div class="score s{{ entry.ratingJSON }}"></div></td>
      </tr>
@@ -35,4 +38,7 @@
   </div>
   <br><br>
 </div>
+<br>
+<br>
+<br>
 {% endblock %}

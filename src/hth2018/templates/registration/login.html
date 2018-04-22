@@ -1,0 +1,51 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container">
+    <br><br>
+    <h1 class="header center orange-text">Sign in.</h1>
+    <br><br>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <!--<p>Please login to see this page.</p>-->
+    {% endif %}
+{% endif %}
+      <form method="post" class="col s6 offset-s3" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="row">
+          <div class="input-field col s12">
+            {{ form.username }}
+            <!--<input id="email" type="email" class="validate">-->
+            <label for="email">Username</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            {{ form.password }}
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <input type="hidden" name="next" value="{{ next }}" />
+        <button type="submit" class="waves-effect waves-light orange darken-1 btn right">Submit</button>
+      </form>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}
