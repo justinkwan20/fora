@@ -1,3 +1,6 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
 <article>
   <table>
     <col width="50%">
@@ -10,7 +13,6 @@
       <th>Rating</th>
       <th>Poster</th>
     </tr>
-    <!-- Iterate over this -->
     {% for entry in latest_listings %}
     <tr>
       <td>{{ entry.title }}</td>
@@ -21,3 +23,4 @@
     {% endfor %}
   </table>
 </article>
+{% endblock %}

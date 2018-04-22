@@ -5,6 +5,10 @@ from web.models import User
 from web.models import Listing
 
 # Create your views here.
+
+def home(request):
+    return render(request, 'web/base_home.html')
+
 def index(request):
     # This creates temporary database entries
     # user = User.objects.create(username = "wpine215", displayname = "Will", password = "password", email = "wpine@bu.edu")
@@ -15,7 +19,7 @@ def index(request):
     # This loads the template and returns it to the user
     latest_listings = Listing.objects.order_by('-id')[:10]
     context = {'latest_listings': latest_listings}
-    return render(request, 'web/index.html', context)
+    return render(request, 'web/base_listings.html', context)
     #template = loader.get_template("web/index.html")
     #context = {
     #    "user_id": user.id,
@@ -26,9 +30,9 @@ def index(request):
     #    }
     #return HttpResponse(template.render(context, request))
 
-def new_listing(request):
+def new(request):
     # database stuff
-    template = loader.get_template("web/newlisting.html")
-    pass
+    template = loader.get_template(request, 'web/base_newlisting.html')
+
 # example:
 # user.objects.get(id = user.id)

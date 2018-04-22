@@ -1,0 +1,17 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+<form id="signup" name="signup">
+  <label for="university">University: </label>
+    <input class="text" name="university" type="text" /> </p>
+	<label for="email">Email Address: </label>
+    <input class="text" name="email" type="text" /> </p>
+	<label for="displayname">Display Name: </label>
+    <input class="text username" name="display name" type="text" /> </p>
+  <label for= "password"> Password: </label>
+    <input class= "text password" name= "password" type= "password" /> </p>
+  <label for= "confirm password"> Confirm Password: </label>
+    <input class= "confirm password" name= "confirm password" type= "password" /> </p>
+	<input class="btn" type="submit" value="Sign Up" />
+</form>
+{% endblock %}

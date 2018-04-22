@@ -1,26 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create New Listing</title>
-    <style>
-    table {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-    }
+{% extends 'web/base.html' %}
 
-    td, th {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-    }
-
-    tr:nth-child(even) {
-      background-color: #dddddd;
-    }
-    </style>
-</head>
-<body>
+{% block content %}
 <h1>Create New Listing</h1>
 
 <!--{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}-->
@@ -33,5 +13,4 @@
 {% endfor %}
 <input type="submit" value="Vote" />
 </form>
-</body>
-</html>
+{% endblock %}
