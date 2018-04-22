@@ -7,7 +7,7 @@
     div.container {
       width: 100%;
       border: 1px solid gray;
-      font-size: 25px;
+      font-size: 16px;
     }
 
     .topnav {
@@ -36,7 +36,7 @@
     }
 
     .topnav .search-container {
-      float: right;
+      float: left;
     }
 
     .topnav input[type=text] {
@@ -47,10 +47,9 @@
     }
 
     .topnav .search-container button {
-      float: right;
       padding: 6px 10px;
       margin-top: 8px;
-      margin-right: 16px;
+      margin-right: 5px;
       background: #ddd;
       font-size: 17px;
       border: none;
@@ -114,24 +113,26 @@
 <div class="container">
   <header>
     <h1>Campus Sell</h1>
-    <p>Welcome, {{ username }}.</p>
   </header>
 
 <div class="topnav">
   <a class="active" href="#home">Home</a>
   <a href="#about">About</a>
   <a href="#contact">Contact</a>
+
+  <div style = "float: right">
   <div class="search-container">
-    <form action="/action_page.php">
+    <form action="#search">
       <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
-      <a href="Username">Username</a>
+      <button type="submit">Go!</button>
     </form>
   </div>
+  <a href="#usrmenu">Welcome, {{ username }}</a>
+</div>
 </div>
   <nav>
   <ul>
-    <h2> Catagories </h2>
+    <h2> Categories </h2>
     <li><a href="#">London</a></li>
     <li><a href="#">Paris</a></li>
     <li><a href="#">Tokyo</a></li>
