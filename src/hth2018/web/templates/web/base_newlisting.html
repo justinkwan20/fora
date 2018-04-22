@@ -1,16 +1,40 @@
 {% extends 'web/base.html' %}
 
 {% block content %}
-<article>
-<h1>Create New Listing</h1>
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container">
+    <br><br>
+    <h1 class="header center orange-text">Create a new listing.</h1>
+    <br><br>
+  </div>
+</div>
 
-<!--{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}-->
-
-<form action="#" method="post">
-{% csrf_token %}
-    <input type="radio" name="choice" />
-    <label for="choice{">Test</label><br />
-<input type="submit" value="Vote" />
-</form>
-</article>
+<div class="container">
+  <div class="row">
+      <form class="col s8 offset-s2">
+        <div class="row">
+          <div class="input-field col s9">
+            <input id="title" type="text" class="validate">
+            <label for="title">Listing Title</label>
+          </div>
+          <div class="input-field col s3">
+            <input id="price" type="text" class="validate">
+            <label for="price">Price</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="desc" class="materialize-textarea"></textarea>
+            <label for="desc">Description...</label>
+          </div>
+        </div>
+        <a class="waves-effect waves-light orange darken-1 btn right" href="#">Submit</a>
+      </form>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
 {% endblock %}

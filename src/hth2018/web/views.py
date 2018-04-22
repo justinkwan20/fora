@@ -34,5 +34,13 @@ def new(request):
     # database stuff
     return render(request, 'web/base_newlisting.html')
 
+def register(request):
+    # database stuff
+    return render(request, 'web/base_register.html')
+
+def login(request):
+    # database stuff
+    return render(request, 'web/base_login.html')
+
 # example:
 # user.objects.get(id = user.id)

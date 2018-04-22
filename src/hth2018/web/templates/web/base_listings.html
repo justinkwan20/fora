@@ -1,26 +1,38 @@
 {% extends 'web/base.html' %}
 
 {% block content %}
-<article>
-  <table>
-    <col width="50%">
-    <col width="15%">
-    <col width="15%">
-    <col width="20%">
-    <tr>
-      <th>Listing</th>
-      <th>Price</th>
-      <th>Rating</th>
-      <th>Poster</th>
-    </tr>
-    {% for entry in latest_listings %}
-    <tr>
-      <td>{{ entry.title }}</td>
-      <td>{{ entry.price }}</td>
-      <td>{{ entry.ratingJSON }}</td>
-      <td>{{ entry.user }}</td>
-    </tr>
-    {% endfor %}
-  </table>
-</article>
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container">
+    <br><br>
+    <h1 class="header center orange-text">Listings for Boston University.</h1>
+    <br><br>
+  </div>
+</div>
+
+<div class="container">
+  <div class="section">
+    <table class="striped">
+   <thead>
+     <tr>
+         <th width="45%">Listing</th>
+         <th width="20%">Posted by</th>
+         <th width="10%">Price</th>
+         <th width="10%">Rating</th>
+     </tr>
+   </thead>
+
+   <tbody>
+     {% for entry in latest_listings %}
+     <tr>
+       <td>{{ entry.title }}</td>
+       <td>{{ entry.user }}</td>
+       <td>{{ entry.price }}</td>
+       <td><div class="score s{{ entry.ratingJSON }}"></div></td>
+     </tr>
+     {% endfor %}
+   </tbody>
+ </table>
+  </div>
+  <br><br>
+</div>
 {% endblock %}
