@@ -139,37 +139,30 @@
 </nav>
   <article>
     <table>
+      <col width="50%">
+      <col width="15%">
+      <col width="15%">
+      <col width="20%">
       <tr>
         <th>Listing</th>
+        <th>Price</th>
         <th>Rating</th>
         <th>Poster</th>
       </tr>
       <!-- Iterate over this -->
+      {% for entry in latest_listings %}
       <tr>
-        <td>{{ title }}</td>
-        <td>{{ rating }}</td>
-        <td>{{ price }}</td>
+        <td>{{ entry.title }}</td>
+        <td>{{ entry.price }}</td>
+        <td>{{ entry.ratingJSON }}</td>
+        <td>{{ entry.user }}</td>
       </tr>
+      {% endfor %}
     </table>
   </article>
 
 <footer> <h3> About us </h3>
    <h4>Contact us</h4></footer>
 </div>
-    <!--<p>Thanks for placing an order from {{ company }}. It's scheduled to ship on {{ s\
-hip_date|date:"F j, Y" }}.</p>
-    <p>Here are the items you've ordered:</p>
-    <ul>
-        {% for item in item_list %}
-        <li>{{ item }}</li>{% endfor %}
-    </ul>
-    {% if ordered_warranty %}
-    <p>Your warranty information will be included in the packaging.</p>
-    {% else %}
-    <p>
-        You didn't order a warranty, so you're on your own when the products inevitably stop working.
-    </p>
-    {% endif %}
-    <p>Sincerely,<br />{{ company }}</p>-->
 </body>
 </html>
